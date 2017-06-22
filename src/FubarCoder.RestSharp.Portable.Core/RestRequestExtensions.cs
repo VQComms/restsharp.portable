@@ -214,7 +214,14 @@ namespace RestSharp.Portable
                             }
                         }
 
-                        request.AddParameter(prop.Name, val);
+                        //if (request.Method == Method.PUT || request.Method == Method.POST)
+                        //{
+                        //    request.AddParameter(prop.Name, val, ParameterType.RequestBody, "x-www-form-urlencoded");
+                        //}
+                        //else
+                        {
+                            request.AddParameter(prop.Name, val);
+                        }
                     }
                 }
 

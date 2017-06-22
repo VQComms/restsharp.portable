@@ -27,6 +27,7 @@ namespace RestSharp.Portable.Tests
                 request.AddParameter("param1", "ParamValue1");
 
                 var response = await client.Execute<HttpBinResponse>(request).ConfigureAwait(false);
+                
                 Assert.Equal("ParamValue1", response.Data.Form["param1"]);
                 Assert.Equal("TestValue1", response.Data.Headers["Restsharp-Test1"]);
             }
