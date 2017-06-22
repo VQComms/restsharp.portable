@@ -1,6 +1,6 @@
 ﻿{
   "name": "FubarCoder.RestSharp.Portable.Core",
-  "version": "4.0.0-*",
+  "version": "4.2.1-VQ",
   "title": "RestSharp.Portable core library",
   "authors": [ "Mark Junker", "Fubar Development Junker" ],
   "description": "This is the core RestSharp.Portable library which contains mostly interfaces to allow dependent libraries to use as few dependencies as possible.\n\nSupported Platforms:\n- .NET Standard 1.0\n- .NET Framework 4\n- Silverlight 5\n- Portable Class Libraries (Profiles 259 and 328)",
@@ -13,7 +13,7 @@
     },
     "Release": {
       "buildOptions": {
-        "debugType": "none",
+        "debugType": "portable",
         "xmlDoc": true,
         "optimize": true
       }
@@ -32,13 +32,6 @@
     "repository": {
       "type": "git",
       "url": "https://github.com/FubarDevelopment/restsharp.portable"
-    },
-    "files": {
-      "mappings": {
-        "/": "../../*.md",
-        "lib/native/": "lib/native/_._",
-        "tools/native/": "tools/native/*.ps1"
-      }
     }
   },
   "dependencies": {
@@ -49,46 +42,7 @@
     }
   },
   "frameworks": {
-    ".NETPortable,Version=v4.0,Profile=Profile328": {
-      "buildOptions": {
-        "compile": [
-          "../../GlobalAssemblyInfo.cs",
-          "../../shared/RestSharp.Portable.Crypto/*.cs",
-          "../../shared/System.Collections.Specialized/*.cs"
-        ],
-        "define": [ "USE_TASKEX", "CUSTOM_CRYPTO", "PROFILE328", "NO_PROXY", "NET40ALIKE" ]
-      },
-      "frameworkAssemblies": {
-        "mscorlib": { "type": "build" },
-        "System": { "type": "build" },
-        "System.Core": { "type": "build" },
-        "System.Net": { "type": "build" },
-        "System.Runtime.Serialization": { "type": "build" },
-        "System.Xml": { "type": "build" }
-      },
-      "dependencies": {
-        "Microsoft.Bcl.Async": "1.0.168"
-      }
-    },
-    ".NETPortable,Version=v4.5,Profile=Profile259": {
-      "buildOptions": {
-        "compile": [
-          "../../GlobalAssemblyInfo.cs",
-          "../../shared/RestSharp.Portable.Crypto/*.cs"
-        ],
-        "define": [ "CUSTOM_CRYPTO", "PROFILE259", "NO_PROXY" ]
-      },
-      "frameworkAssemblies": {
-        "mscorlib": { "type": "build" },
-        "System": { "type": "build" },
-        "System.Core": { "type": "build" },
-        "System.Diagnostics.Tools": { "type": "build" },
-        "System.Net.Primitives": { "type": "build" },
-        "System.Resources.ResourceManager": { "type": "build" },
-        "System.Runtime.Serialization.Xml": { "type": "build" },
-        "System.Xml": { "type": "build" }
-      }
-    },
+    
     "netstandard1.0": {
       "imports": [ "dotnet" ],
       "buildOptions": {
@@ -130,76 +84,6 @@
           "type": "build",
           "version": "1.0.0"
         }
-      }
-    },
-    "net40": {
-      "buildOptions": {
-        "compile": [ "../../GlobalAssemblyInfo.cs" ],
-        "define": [ "USE_TASKEX", "NET40ALIKE" ]
-      },
-      "frameworkAssemblies": {
-        "System.Runtime.Serialization": "",
-        "System.Xml": ""
-      },
-      "dependencies": {
-        "Microsoft.Bcl.Async": "1.0.168"
-      }
-    },
-    "net45": {
-      "frameworkAssemblies": {
-        "System.Runtime.Serialization": "",
-        "System.Xml": ""
-      }
-    },
-    "sl5": {
-      "buildOptions": {
-        "compile": [
-          "../../GlobalAssemblyInfo.cs",
-          "../../shared/RestSharp.Portable.Crypto/*.cs",
-          "../../shared/System.Collections.Specialized/*.cs"
-        ],
-        "define": [ "USE_TASKEX", "CUSTOM_CRYPTO", "NO_PROXY", "NET40ALIKE" ]
-      },
-      "frameworkAssemblies": {
-        "mscorlib": { "type": "build" },
-        "System": { "type": "build" },
-        "System.Core": { "type": "build" },
-        "System.Net": { "type": "build" },
-        "System.Runtime.Serialization": { "type": "build" },
-        "System.Xml": { "type": "build" }
-      },
-      "dependencies": {
-        "Microsoft.Bcl.Async": "1.0.168"
-      }
-    },
-    "MonoAndroid10": {
-      "frameworkAssemblies": {
-        "mscorlib": { "type": "build" },
-        "System": { "type": "build" },
-        "System.Core": { "type": "build" },
-        "System.Net": { "type": "build" },
-        "System.Runtime.Serialization": "",
-        "System.Xml": ""
-      }
-    },
-    "MonoTouch10": {
-      "frameworkAssemblies": {
-        "mscorlib": { "type": "build" },
-        "System": { "type": "build" },
-        "System.Core": { "type": "build" },
-        "System.Net": { "type": "build" },
-        "System.Runtime.Serialization": "",
-        "System.Xml": ""
-      }
-    },
-    "Xamarin.iOS10": {
-      "frameworkAssemblies": {
-        "mscorlib": { "type": "build" },
-        "System": { "type": "build" },
-        "System.Core": { "type": "build" },
-        "System.Net": { "type": "build" },
-        "System.Runtime.Serialization": "",
-        "System.Xml": ""
       }
     }
   }
