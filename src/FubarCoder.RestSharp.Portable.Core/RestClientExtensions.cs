@@ -160,7 +160,7 @@ namespace RestSharp.Portable
                 var queryString = new StringBuilder(urlBuilder.Query);
                 var startsWithQuestionmark = queryString.ToString().StartsWith("?");
                 var effectiveMethod = client.GetEffectiveHttpMethod(request, parameters);
-                var queryParams = (effectiveMethod != Method.POST && effectiveMethod != Method.PUT)
+                var queryParams = (effectiveMethod == Method.GET)
                     ? parameters.Where(x => x.Type == ParameterType.QueryString || x.Type == ParameterType.GetOrPost)
                     : parameters.Where(x => x.Type == ParameterType.QueryString);
                 foreach (var param in queryParams)
